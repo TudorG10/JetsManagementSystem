@@ -1,8 +1,8 @@
 {
-  "name": "src",
+  "name": "jetsmanagementsystem",
   "version": "1.0.0",
   "description": "A Vue.js project",
-  "author": "TudorG10 <gurau.tudor@yahoo.com>",
+  "author": "Tudor Gurau",
   "private": true,
   "scripts": {
     "dev": "node build/dev-server.js",
