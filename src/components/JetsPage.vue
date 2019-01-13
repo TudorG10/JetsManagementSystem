@@ -11,15 +11,18 @@
       <table id="playerList">
           <tr>
             <th>No</th>
-            <th>Name</th>
+            <th>Nom</th>
+            <th>Position</th>
+
           </tr>
+
           <tr v-for="leader in pData.data_set.leaders">
               <td>{{ leader.uniform_number }}</td>
               <td>{{ leader.first_name }} {{ leader.last_name}}</td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
+              <td>{{ leader.position}}</td>
+              <td v-for="img in leader.images" v-if="img.height < 200">
+                  <img :src="img._value">
+              </td>
               <td></td>
               <td></td>
               <td></td>
@@ -32,14 +35,9 @@
 
 
 <script type="text/javascript" src='../json/globalStats.json'></script>
-
 <script>
-
 var teamData = require('./../json/globalStats.json')
 var playerData = require('./../json/player.json')
-
-// var potato = '{ "name" : "john", "birth" : "1986-12-14"}'
-// var tomato = typeof (teamData.data_set.team.first_name)
 export default {
   name: 'JetsPage',
   data () {
