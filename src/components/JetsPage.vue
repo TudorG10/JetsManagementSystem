@@ -6,7 +6,10 @@
                 <td style="min-width: 200px; min-height: 200;" rowspan="2">
                     <img :src="tData.data_set.team.images[3]._value">
                 </td>
-                <td style="font-size: 40px; min-width: 500px; text-align: left; background-color: #e6e6e6; border: 2px solid white; box-shadow: 10px 10px #888888; padding-left: 20px" rowspan="2"><span style="font-weight: bold;">Jets</span> Winnipeg</td>
+                <td style="font-size: 40px; min-width: 500px; text-align: left; background-color: #e6e6e6; border: 2px solid white; box-shadow: 10px 10px #888888; padding-left: 20px" rowspan="2">
+                    <span style="font-weight: bold;">Jets</span> 
+                    Winnipeg
+                </td>
                 <td class="result-label">Wins</td>
                 <td class="result-label">Losses</td>
                 <td class="result-label">Rank</td>
@@ -20,62 +23,66 @@
             </tr>
         </table>
       </div>
-      <table id="attackerPlayerList">
-           <caption>Attackers</caption>         
+      <table class="player-table">
           <tr>
-            <th></th>
-            <th>No</th>
-            <th>Nom</th>
-            <th>Position</th>
-            <th>Events Played</th>
-            <th>Goals</th>
-            <th>Hits</th>
-            <th>Assists</th>
-            <th>Points</th>
-            <th>Shots</th>
+              <td colspan="10"><div class="player-title">ATTACKERS</div></td>
           </tr>
-          <tr v-for="leader in pData.data_set.leaders" v-if="leader.position != 'Défenseur'">
+          <tr style="height: 50px;">
+            <th class="player-label"></th>
+            <th class="player-label">No</th>
+            <th class="player-label">Name</th>
+            <th class="player-label">Position</th>
+            <th class="player-label">Events Played</th>
+            <th class="player-label">Goals</th>
+            <th class="player-label">Hits</th>
+            <th class="player-label">Assists</th>
+            <th class="player-label">Points</th>
+            <th class="player-label">Shots</th>
+          </tr>
+          <tr v-for="leader in pData.data_set.leaders" v-if="leader.position != 'Défenseur'" >
               <td v-for="img in leader.images" v-if="img.height < 200">
-                  <img :src="img._value">
+                  <img :src="img._value" style="max-height: 100px;">
               </td>             
-              <td>{{leader.uniform_number}}</td>
-              <td>{{leader.first_name}}{{leader.last_name}}</td>
-              <td>{{leader.position}}</td>
-              <td>{{leader.events_played}}</td>
-              <td>{{leader.goals}}</td>
-              <td>{{leader.hits}}</td>
-              <td>{{leader.assists}}</td>
-              <td>{{leader.points}}</td>
-              <td>{{leader.shots}}</td>
+              <td class="table-text">{{leader.uniform_number}}</td>
+              <td class="table-text">{{leader.first_name}} {{leader.last_name}}</td>
+              <td class="table-text">{{leader.position}}</td>
+              <td class="table-text">{{leader.events_played}}</td>
+              <td class="table-text">{{leader.goals}}</td>
+              <td class="table-text">{{leader.hits}}</td>
+              <td class="table-text">{{leader.assists}}</td>
+              <td class="table-text">{{leader.points}}</td>
+              <td class="table-text">{{leader.shots}}</td>
           </tr>
       </table>
-       <table id="defensePlayerList">
-           <caption>Defenders</caption>
+       <table class="player-table">
           <tr>
-            <th></th>
-            <th>No</th>
-            <th>Nom</th>
-            <th>Position</th>
-            <th>Events Played</th>
-            <th>Goals</th>
-            <th>Hits</th>
-            <th>Assists</th>
-            <th>Points</th>
-            <th>Shots</th>
+              <td colspan="10"><div class="player-title">DEFENDERS</div></td>
+          </tr>          
+          <tr>
+            <th class="player-label"></th>
+            <th class="player-label">No</th>
+            <th class="player-label">Nom</th>
+            <th class="player-label">Position</th>
+            <th class="player-label">Events Played</th>
+            <th class="player-label">Goals</th>
+            <th class="player-label">Hits</th>
+            <th class="player-label">Assists</th>
+            <th class="player-label">Points</th>
+            <th class="player-label">Shots</th>
           </tr>
           <tr v-for="leader in pData.data_set.leaders" v-if="leader.position == 'Défenseur'">
               <td v-for="img in leader.images" v-if="img.height < 200">
-                  <img :src="img._value">
+                  <img :src="img._value" style="max-height: 100px;">
               </td>             
-              <td>{{leader.uniform_number}}</td>
-              <td>{{leader.first_name}}{{leader.last_name}}</td>
-              <td>{{leader.position}}</td>
-              <td>{{leader.events_played}}</td>
-              <td>{{leader.goals}}</td>
-              <td>{{leader.hits}}</td>
-              <td>{{leader.assists}}</td>
-              <td>{{leader.points}}</td>
-              <td>{{leader.shots}}</td>
+              <td class="table-text">{{leader.uniform_number}}</td>
+              <td class="table-text">{{leader.first_name}} {{leader.last_name}}</td>
+              <td class="table-text">{{leader.position}}</td>
+              <td class="table-text">{{leader.events_played}}</td>
+              <td class="table-text">{{leader.goals}}</td>
+              <td class="table-text">{{leader.hits}}</td>
+              <td class="table-text">{{leader.assists}}</td>
+              <td class="table-text">{{leader.points}}</td>
+              <td class="table-text">{{leader.shots}}</td>
           </tr>
       </table>
   </div>
@@ -100,25 +107,42 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-  #attackerPlayerList {
-      font-family: Arial, Helvetica, sans-serif;
-      color: #000000;
-      background-color: #FFFFFF;
-  }
-  .JetsPage{
-      background-color: white;
-  }
   .result-value{
-      font-size: 24px;
+      font-size: 40px;
       font-weight: bold;
+      background-color: white;
+      color: black;
   }
   .result-label{
       min-width: 100px; 
       font-size: 24px;
       vertical-align: bottom;
       background-color: blue;
-      color: #FFFFFF;
+      color: white;
       font-weight: bold;
       border-spacing: 50px;
   }
+  .player-table{
+      margin-left: auto;
+      margin-right: auto;
+  }
+  .player-label{
+      color: white;
+      background-color: #737373;
+      min-width: 100px;
+      width: 100px;
+      font-weight: bold;
+      font-size: 20px;
+
+  }
+  tr:nth-child(even) {background-color: #f2f2f2;}
+    .player-title{
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        font-size: 40px;
+        float: left;
+        margin-left: 40px;
+    }
+    .table-text{
+        font-size: 22px;
+    }
 </style>
