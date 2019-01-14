@@ -11,8 +11,7 @@ git clone git@github.com:TudorG10/JetsManagementSystem.git
 cd JetsManagementSystem
 
 # install dependencies
-Need Node.js to be installed beforehand
-[NodeJS][https://nodejs.org]
+Need [Node.js](https://nodejs.org/en/download/) to be installed beforehand
 
 npm install
 # serve with hot reload at localhost:8080
