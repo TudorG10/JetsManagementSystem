@@ -112,6 +112,8 @@ export default {
       font-weight: bold;
       background-color: white;
       color: black;
+      box-shadow: 10px 10px #888888;
+      
   }
   .result-label{
       min-width: 100px; 
@@ -121,6 +123,7 @@ export default {
       color: white;
       font-weight: bold;
       border-spacing: 50px;
+      box-shadow: 10px 10px #888888;
   }
   .player-table{
       margin: 0 auto;
