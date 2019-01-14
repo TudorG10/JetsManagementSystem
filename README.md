@@ -12,7 +12,7 @@ cd JetsManagementSystem
 
 # install dependencies
 Need Node.js to be installed beforehand
-[NodeJS](https://nodejs.org)
+[NodeJS][https://nodejs.org]
 
 npm install
 # serve with hot reload at localhost:8080
