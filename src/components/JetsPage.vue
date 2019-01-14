@@ -58,7 +58,7 @@
           <tr>
               <td colspan="10"><div class="player-title">DEFENDERS</div></td>
           </tr>          
-          <tr>
+          <tr style="height: 50px;">
             <th class="player-label"></th>
             <th class="player-label">No</th>
             <th class="player-label">Nom</th>
@@ -123,8 +123,8 @@ export default {
       border-spacing: 50px;
   }
   .player-table{
-      margin-left: auto;
-      margin-right: auto;
+      margin: 0 auto;
+      width: 85%;
   }
   .player-label{
       color: white;
