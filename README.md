@@ -1,30 +1,19 @@
-# jetsmanagementsystem
+# Jets Management System
 
-> A Vue.js project
+> Displaying a web page from two JSON files
 
 ## Build Setup
 
 ``` bash
+#initial setup
+git clone git@github.com:TudorG10/JetsManagementSystem.git
+
+cd JetsManagementSystem
+
 # install dependencies
 npm install
 
 # serve with hot reload at localhost:8080
 npm run dev
 
-# build for production with minification
-npm run build
-
-# build for production and view the bundle analyzer report
-npm run build --report
-
-# run unit tests
-npm run unit
-
-# run e2e tests
-npm run e2e
-
-# run all tests
-npm test
-```
-
-For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+a localhost web browser will launch with the appropriate page
